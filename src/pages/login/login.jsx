@@ -27,36 +27,44 @@ const Login = () => {
     return (
         <Layout className={styles.loginLayout}>
             <Content className={styles.loginContent}>
-                <Card className={styles.loginCard} title="用户登录">
-                    <Form
-                        name="login"
-                        initialValues={{ remember: true }}
-                        onFinish={handleSubmit}
-                        layout="vertical"
-                    >
-                        <Form.Item
-                            name="username"
-                            rules={[{ required: true, message: '请输入用户名' }]}
-                            label="用户名"
-                        >
-                            <Input prefix={<UserOutlined />} placeholder="请输入用户名" />
-                        </Form.Item>
+                {/* 左侧微应用容器 - 占据70%宽度 */}
+                <div className={styles.microAppSection}>
+                    <div id="subapp-container-login" className={styles.microAppContainer}></div>
+                </div>
 
-                        <Form.Item
-                            name="password"
-                            rules={[{ required: true, message: '请输入密码' }]}
-                            label="密码"
+                {/* 右侧登录表单 - 占据30%宽度 */}
+                <div className={styles.loginSection}>
+                    <Card className={styles.loginCard} title="用户登录">
+                        <Form
+                            name="login"
+                            initialValues={{ remember: true }}
+                            onFinish={handleSubmit}
+                            layout="vertical"
                         >
-                            <Input.Password prefix={<LockOutlined />} placeholder="请输入密码" />
-                        </Form.Item>
+                            <Form.Item
+                                name="username"
+                                rules={[{ required: true, message: '请输入用户名' }]}
+                                label="用户名"
+                            >
+                                <Input prefix={<UserOutlined />} placeholder="请输入用户名" />
+                            </Form.Item>
 
-                        <Form.Item>
-                            <Button type="primary" htmlType="submit" loading={loading} block>
-                                登录
-                            </Button>
-                        </Form.Item>
-                    </Form>
-                </Card>
+                            <Form.Item
+                                name="password"
+                                rules={[{ required: true, message: '请输入密码' }]}
+                                label="密码"
+                            >
+                                <Input.Password prefix={<LockOutlined />} placeholder="请输入密码" />
+                            </Form.Item>
+
+                            <Form.Item>
+                                <Button type="primary" htmlType="submit" loading={loading} block>
+                                    登录
+                                </Button>
+                            </Form.Item>
+                        </Form>
+                    </Card>
+                </div>
             </Content>
         </Layout>
     );

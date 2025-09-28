@@ -61,16 +61,45 @@
 }
 
 .loginContent {
-    max-width: 480px;
     width: 100%;
-    padding: 40px 24px;
+    height: 100vh;
     position: relative;
     z-index: 1;
     display: flex;
+    box-sizing: border-box;
+}
+
+/* 左侧微应用区域 - 占据70%宽度 */
+.microAppSection {
+    width: 70vw;
+    height: 90vh;
+    position: relative;
+    background: rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(0, 255, 255, 0.1);
+    margin-top: 5vh;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.microAppContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 右侧登录区域 - 占据30%宽度 */
+.loginSection {
+    width: 30vw;
+    height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
+    padding: 40px 24px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 .loginCard {
