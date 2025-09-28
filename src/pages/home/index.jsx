@@ -6,8 +6,8 @@ import { useTheme } from '../../hooks/useTheme';
 
 const HomeOverview = () => {
     const { isDark } = useTheme();
-    const isProd = import.meta.env.MODE === 'production';
-
+    const isProd = import.meta.env.MODE === 'prod';
+    console.log(isProd, 'isProd');
     const stats = useMemo(() => ([
         { title: '今日新增用户', value: 128, delta: 12, up: true },
         { title: '活跃用户', value: 3542, delta: 3, up: true },
@@ -24,11 +24,13 @@ const HomeOverview = () => {
     const columns = [
         { title: '任务', dataIndex: 'task', key: 'task' },
         { title: '负责人', dataIndex: 'owner', key: 'owner' },
-        { title: '状态', dataIndex: 'status', key: 'status', render: (s) => {
-            const map = { done: 'success', doing: 'processing', pending: 'default' };
-            const text = { done: '已完成', doing: '进行中', pending: '待开始' };
-            return <Tag color={map[s]}>{text[s]}</Tag>;
-        }},
+        {
+            title: '状态', dataIndex: 'status', key: 'status', render: (s) => {
+                const map = { done: 'success', doing: 'processing', pending: 'default' };
+                const text = { done: '已完成', doing: '进行中', pending: '待开始' };
+                return <Tag color={map[s]}>{text[s]}</Tag>;
+            }
+        },
         { title: '更新时间', dataIndex: 'updatedAt', key: 'updatedAt' },
     ];
     const dataSource = [

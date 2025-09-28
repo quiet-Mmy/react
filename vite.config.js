@@ -7,7 +7,6 @@ export default defineConfig(({ mode }) => {
   const { VITE_APP_ENV } = env
 
   return {
-    // base: VITE_APP_ENV === 'prod' ? '/reactServer/' : '/reactServer/',
     base: VITE_APP_ENV === 'prod' ? '/reactServer/' : './',
     plugins: [
       react(),

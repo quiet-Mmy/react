@@ -51,8 +51,8 @@ export const appRoutes = [
         ]
     }
 ] as const
-
+const env = import.meta.env
 const router = createBrowserRouter(appRoutes as any, {
-    basename: '/reactServer'
+    basename: env.MODE === 'prod' ? '/reactServer' : undefined
 })
 export default router
