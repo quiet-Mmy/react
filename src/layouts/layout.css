@@ -1,0 +1,166 @@
+#root {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.logo {
+    height: 50px;
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+.full-width-content {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-area {
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.breadcrumb-container {
+    flex-shrink: 0;
+}
+
+/* Tabs 关闭按钮 hover 渐显 */
+.breadcrumb-container .ant-tabs-tab .ant-tabs-tab-remove {
+    opacity: 0;
+    transition: opacity .2s ease, background-color .2s ease, color .2s ease;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.65);
+    margin-left: 6px;
+}
+
+.breadcrumb-container .ant-tabs-tab:hover .ant-tabs-tab-remove {
+    opacity: 1;
+}
+
+/* 激活标签的关闭按钮常显 */
+.breadcrumb-container .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-remove {
+    opacity: 1;
+}
+
+.breadcrumb-container .ant-tabs-tab .ant-tabs-tab-remove:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.breadcrumb-container .ant-tabs-tab .ant-tabs-tab-remove:active {
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+/* 暗黑下的关闭按钮 */
+html.dark .breadcrumb-container .ant-tabs-tab .ant-tabs-tab-remove {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+html.dark .breadcrumb-container .ant-tabs-tab .ant-tabs-tab-remove:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+html.dark .breadcrumb-container .ant-tabs-tab .ant-tabs-tab-remove:active {
+    background-color: rgba(255, 255, 255, 0.26);
+}
+
+.container-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.full-width-content>* {
+    width: 100%;
+}
+
+.layOutContainer {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    min-height: 100vh;
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-header-bg);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-header {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-header-text);
+}
+
+.sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+}
+
+.sidebar-item {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--color-header-text);
+    text-decoration: none;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+html.dark .sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-item.active {
+    background-color: rgba(100, 108, 255, 0.15);
+}

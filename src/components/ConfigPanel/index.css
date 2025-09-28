@@ -1,0 +1,403 @@
+.config-trigger {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: var(--primary-color, #1677ff);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border: none !important;
+}
+
+.config-trigger:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: var(--primary-color, #1677ff) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.config-trigger:focus {
+    background: var(--primary-color, #1677ff) !important;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.config-trigger:active {
+    background: var(--primary-color, #1677ff) !important;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.config-drawer.light {
+    background-color: #fff;
+    color: #000;
+}
+
+.config-drawer.light .ant-drawer-content {
+    padding: 0px !important;
+}
+
+.config-drawer.dark {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-drawer-content {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-drawer-header {
+    padding: 0px !important;
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.config-drawer.dark .ant-drawer-body {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+/* 深色模式下的遮罩层 */
+.config-drawer.dark .ant-drawer-mask {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+    z-index: 1000;
+}
+
+/* 确保 Drawer 内容正确显示 */
+.config-drawer.dark .ant-drawer-content-wrapper {
+    background-color: #1f1f1f !important;
+    z-index: 1001;
+}
+
+.config-drawer.dark .ant-drawer-content {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+/* 确保所有文本内容在深色模式下可见 */
+.config-drawer.dark .config-content {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .config-section {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .config-item {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .config-item .ant-typography {
+    color: #fff !important;
+}
+
+.config-drawer.dark .config-actions {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+/* 修复深色模式下的 Drawer 层级问题 */
+.config-drawer.dark {
+    z-index: 1001 !important;
+}
+
+.config-drawer.dark .ant-drawer {
+    z-index: 1001 !important;
+}
+
+/* 确保 Drawer 在深色模式下正确显示 */
+.config-drawer.dark .ant-drawer-body {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-drawer-header {
+    padding: 0px !important;
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 强制重置所有 Drawer 相关样式 */
+.config-drawer.dark * {
+    /* color: #fff !important; */
+}
+
+.config-drawer.dark .ant-typography {
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-typography h5 {
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-typography span {
+    color: #fff !important;
+}
+
+/* 直接针对 Ant Design Drawer 的类名 */
+.ant-drawer.ant-drawer-right.config-drawer.dark {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.ant-drawer.ant-drawer-right.config-drawer.dark .ant-drawer-content {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.ant-drawer.ant-drawer-right.config-drawer.dark .ant-drawer-body {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.ant-drawer.ant-drawer-right.config-drawer.dark .ant-drawer-header {
+    padding: 0px !important;
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.config-drawer.dark .ant-drawer-content-wrapper {
+    background-color: #1f1f1f !important;
+}
+
+.config-drawer.dark .ant-drawer-content {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+.config-drawer-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.close-button {
+    color: inherit;
+}
+
+.close-button:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.close-button:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.config-content {
+    padding: 0;
+}
+
+.config-section {
+    margin-bottom: 24px;
+}
+
+.config-section .ant-typography {
+    margin-bottom: 16px !important;
+    color: inherit;
+}
+
+.config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.config-drawer.dark .config-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.config-drawer.dark .config-section .ant-typography {
+    color: #fff !important;
+}
+
+.config-drawer.dark .config-section .ant-typography h5 {
+    color: #fff !important;
+}
+
+.config-drawer.dark .config-section .ant-typography span {
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-switch {
+    background-color: #434343;
+}
+
+.config-drawer.dark .ant-switch-checked {
+    background-color: var(--primary-color, #1677ff);
+}
+
+.config-drawer.dark .ant-color-picker {
+    background-color: #434343;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.config-drawer.dark .ant-select {
+    background-color: #434343 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-select .ant-select-selector {
+    background-color: #434343 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-select .ant-select-selection-item {
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-select .ant-select-arrow {
+    color: #fff !important;
+}
+
+/* 强制覆盖 Select 组件的所有样式 */
+.config-drawer.dark .ant-select {
+    background-color: #434343 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-select .ant-select-selector {
+    background-color: #434343 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-select .ant-select-selection-item {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+.config-drawer.dark .ant-select .ant-select-arrow {
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-select:hover {
+    /* border-color: rgba(255, 255, 255, 0.3) !important; */
+}
+
+.config-drawer.dark .ant-select:focus {
+    /* border-color: rgba(255, 255, 255, 0.3) !important; */
+    /* box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important; */
+}
+
+.config-drawer.dark .ant-btn {
+    background-color: #434343;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.config-drawer.dark .ant-btn-primary {
+    background-color: var(--primary-color, #1677ff);
+    border-color: var(--primary-color, #1677ff);
+    color: #fff;
+}
+
+.config-drawer.dark .ant-btn:hover {
+    background-color: #595959 !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-btn:focus {
+    background-color: #595959 !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #fff !important;
+}
+
+.config-drawer.dark .ant-btn:active {
+    background-color: #434343 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+
+.config-item:last-child {
+    border-bottom: none;
+}
+
+.config-actions {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.config-drawer.dark .config-actions {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 全局配置样式 */
+:root {
+    --primary-color: #1677ff;
+}
+
+.hide-footer .ant-layout-footer {
+    display: none !important;
+}
+
+.hide-breadcrumb .breadcrumb-container {
+    display: none !important;
+}
+
+.compact-mode .ant-layout-sider {
+    width: 60px !important;
+}
+
+.compact-mode .ant-layout-sider .ant-menu-item {
+    padding: 0 16px !important;
+}
+
+.compact-mode .ant-layout-sider .ant-menu-item span {
+    display: none;
+}
+
+/* 主题色变量应用 */
+.ant-btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ant-btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.ant-switch-checked {
+    background-color: var(--primary-color);
+}
+
+.ant-color-picker-trigger {
+    border-color: var(--primary-color);
+}
+
+.ant-color-picker-trigger:hover {
+    border-color: var(--primary-color);
+}

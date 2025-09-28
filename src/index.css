@@ -1,0 +1,339 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* 主题变量（浅色默认值） */
+  --color-bg: #ffffff;
+  --color-text: #213547;
+  --color-header-bg: #ffffff;
+  --color-header-text: #213547;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --font-size:'24px';
+  --primary-color: #1677ff;
+
+  /* 默认使用浅色，便于看到切到深色的过渡 */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* 基于类名的主题切换，供视图过渡动画使用 */
+html.dark {
+  color-scheme: dark;
+  /* 深色变量覆盖 */
+  --color-bg: #121212;
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-header-bg: #1a1a1a;
+  --color-header-text: rgba(255, 255, 255, 0.92);
+  --color-border: rgba(255, 255, 255, 0.12);
+}
+
+html.dark,
+html.dark body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+html:not(.dark),
+html:not(.dark) body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* 深色模式下的全局文字颜色 */
+html.dark * {
+  color: inherit;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: var(--color-text);
+}
+
+html.dark p,
+html.dark span,
+html.dark div {
+  color: var(--color-text);
+}
+
+/* 深色模式下的 Ant Design 组件 */
+html.dark .ant-layout {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark .ant-layout-header {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+}
+
+html.dark .ant-layout-content {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark .ant-layout-footer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark .ant-layout-sider {
+  background-color: var(--color-header-bg);
+}
+
+html.dark .ant-menu {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+}
+
+html.dark .ant-menu-item {
+  color: var(--color-header-text);
+}
+
+html.dark .ant-menu-item:hover {
+  color: var(--color-header-text);
+}
+
+html.dark .ant-breadcrumb {
+  color: var(--color-text);
+}
+
+html.dark .ant-breadcrumb a {
+  color: var(--color-text);
+}
+
+html.dark .ant-card {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+html.dark .ant-table {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark .ant-table-thead > tr > th {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  border-color: var(--color-border);
+}
+
+html.dark .ant-table-tbody > tr > td {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+html.dark .ant-drawer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark .ant-drawer-header {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border-bottom-color: var(--color-border);
+}
+
+html.dark .ant-drawer-body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* 深色模式下的 Drawer 组件 */
+html.dark .ant-drawer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark .ant-drawer-content {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+html.dark .ant-drawer-content-wrapper {
+  background-color: var(--color-bg);
+}
+
+html.dark .ant-drawer-mask {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* 强制覆盖 Ant Design Drawer 的深色模式样式 */
+html.dark .ant-drawer.ant-drawer-right {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+html.dark .ant-drawer.ant-drawer-right .ant-drawer-content {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+html.dark .ant-drawer.ant-drawer-right .ant-drawer-body {
+  color: #fff !important;
+}
+
+html.dark .ant-drawer.ant-drawer-right .ant-drawer-header {
+  background-color: transparent !important;
+  color: #fff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 深色模式下的按钮样式 */
+html.dark .ant-btn {
+  background-color: #434343;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+html.dark .ant-btn:hover {
+  background-color: #595959 !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
+html.dark .ant-btn:focus {
+  background-color: #595959 !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
+html.dark .ant-btn:active {
+  background-color: #434343 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+html.dark .ant-btn-primary {
+  background-color: var(--primary-color, #1677ff);
+  border-color: var(--primary-color, #1677ff);
+  color: #fff;
+}
+
+html.dark .ant-btn-primary:hover {
+  background-color: var(--primary-color, #1677ff) !important;
+  border-color: var(--primary-color, #1677ff) !important;
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+html.dark .ant-btn-primary:focus {
+  background-color: var(--primary-color, #1677ff) !important;
+  border-color: var(--primary-color, #1677ff) !important;
+  color: #fff !important;
+}
+
+html.dark .ant-btn-primary:active {
+  background-color: var(--primary-color, #1677ff) !important;
+  border-color: var(--primary-color, #1677ff) !important;
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+/* Ant Design 主题配置会自动处理大部分样式，这里只保留必要的覆盖 */
+
+.br-15 {
+  border-radius: 30px;
+}
+
+/* 只移除 Ant Design 按钮的黑色 focus 边框，保留其他样式 */
+.ant-btn:focus,
+.ant-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 移除 Ant Design 组件的黑色 focus 边框 */
+.ant-switch:focus,
+.ant-select:focus,
+.ant-input:focus,
+.ant-color-picker:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

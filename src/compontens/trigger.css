@@ -1,0 +1,21 @@
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    will-change: clip-path;
+    contain: paint;
+}
+
+/* 默认层级：新在上、旧在下 */
+::view-transition-new(root) { z-index: 2; }
+::view-transition-old(root) { z-index: 1; }
+
+/* 过渡期间：强制新在上 */
+html.vt-new-top::view-transition-new(root) { z-index: 3; }
+html.vt-new-top::view-transition-old(root) { z-index: 2; }
+
+/* 过渡期间：强制旧在上 */
+html.vt-old-top::view-transition-old(root) { z-index: 3; }
+html.vt-old-top::view-transition-new(root) { z-index: 2; }
+
+/* 过渡运行时避免出现滚动条或布局抖动引发的闪烁 */
+html.vt-running { overflow: clip; }

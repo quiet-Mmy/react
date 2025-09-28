@@ -1,0 +1,248 @@
+.loginLayout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.loginLayout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(90deg, transparent 79px, rgba(0, 255, 255, 0.03) 79px, rgba(0, 255, 255, 0.03) 81px, transparent 81px),
+        linear-gradient(transparent 79px, rgba(0, 255, 255, 0.03) 79px, rgba(0, 255, 255, 0.03) 81px, transparent 81px);
+    background-size: 100px 100px;
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(100px, 100px);
+    }
+}
+
+.loginLayout::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: particleFloat 30s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-100px, -100px) rotate(360deg);
+    }
+}
+
+.loginContent {
+    max-width: 480px;
+    width: 100%;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.loginCard {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow:
+        0 0 0 1px rgba(0, 255, 255, 0.1),
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: cardGlow 3s ease-in-out infinite alternate;
+}
+
+.loginCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0% {
+        box-shadow:
+            0 0 0 1px rgba(0, 255, 255, 0.1),
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 40px rgba(0, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 1px rgba(0, 255, 255, 0.2),
+            0 8px 32px rgba(0, 0, 0, 0.4),
+            0 0 60px rgba(0, 255, 255, 0.2);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.loginCard:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.loginCard :global(.ant-card-head) {
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    background: rgba(0, 255, 255, 0.05);
+    padding: 20px 24px 12px;
+    text-align: center;
+}
+
+.loginCard :global(.ant-card-body) {
+    padding: 20px 24px;
+}
+
+.loginCard :global(.ant-card-head-title) {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00ffff 0%, #00ccff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.loginCard :global(.ant-form-item-label > label) {
+    font-weight: 600;
+    color: #e2e8f0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.loginCard :global(.ant-input) {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.loginCard :global(.ant-input::placeholder) {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.loginCard :global(.ant-input:hover) {
+    border-color: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.1);
+}
+
+.loginCard :global(.ant-input:focus) {
+    border-color: #00ffff;
+    box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.loginCard :global(.ant-btn-primary) {
+    background: linear-gradient(135deg, #00ffff 0%, #0099cc 100%);
+    border: none;
+    border-radius: 6px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.loginCard :global(.ant-btn-primary::before) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.loginCard :global(.ant-btn-primary:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
+    background: linear-gradient(135deg, #00e6e6 0%, #0088cc 100%);
+}
+
+.loginCard :global(.ant-btn-primary:hover::before) {
+    left: 100%;
+}
+
+.loginCard :global(.ant-btn-primary:active) {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.3);
+}
+
+.loginCard :global(.anticon) {
+    color: #00ffff;
+    filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.5));
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .loginContent {
+        padding: 20px 16px;
+    }
+
+    .loginCard {
+        border-radius: 8px;
+    }
+
+    .loginCard :global(.ant-card-head-title) {
+        font-size: 20px;
+    }
+}
