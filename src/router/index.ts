@@ -52,5 +52,7 @@ export const appRoutes = [
     }
 ] as const
 
-const router = createBrowserRouter(appRoutes as any)
+const router = createBrowserRouter(appRoutes as any, {
+    basename: '/reactServer'
+})
 export default router
